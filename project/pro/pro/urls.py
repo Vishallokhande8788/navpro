@@ -18,7 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from proapp import views
+from django.urls import include
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("" , views.home)
+    path("" , views.home),
+    path("pyexam/", views.python_exam),
+    path("accounts/",include("django.contrib.auth.urls")),
 ]
